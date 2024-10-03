@@ -11,7 +11,7 @@ const app = express(); //express () bilan qo'yilishi kere
 app.use(cors());
 
 app.use(express.json()); //app.use bu middleware ishlatish uchun severga dopolneniya qoyish uchun json() json format uchun
-app.use("/student", StudentRouter);
+app.use("/participants", StudentRouter);
 app.use("/admin", AdminRouter);
 
 const PORT = process.env.PORT || 8000; //env port uchun

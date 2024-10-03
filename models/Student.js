@@ -22,27 +22,27 @@ const StudentSchema = new mongoose.Schema(
       required: true,
     },
 
-    // ratings: {
-    //   type: [
-    //     {
-    //       teacher_id: {
-    //         type: String,
-    //       },
+    ratings: {
+      type: [
+        {
+          data: {
+            type: String,
+          },
 
-    //       rating: {
-    //         type: Number,
-    //       },
+          trueAnswers: {
+            type: Number,
+          },
 
-    //       comment: {
-    //         type: String,
-    //       },
+          falseAnswers: {
+            type: String,
+          },
 
-    //       tag: {
-    //         type: String,
-    //       },
-    //     },
-    //   ],
-    // },
+          penalty: {
+            type: String,
+          },
+        },
+      ],
+    },
   },
   {
     timestamps: true,
