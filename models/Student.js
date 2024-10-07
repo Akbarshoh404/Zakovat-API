@@ -25,7 +25,7 @@ const StudentSchema = new mongoose.Schema(
     ratings: {
       type: [
         {
-          data: {
+          date: {
             type: String,
           },
 

@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
   let todo = await Admin.findOne({ name });
   if (todo) return res.send("You have this user!!!");
 
-  todo = new Request(req.body);
+  todo = new Admin(req.body);  // Fixed this line
   await todo.save();
 
   res.send("User Added: OK");

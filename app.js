@@ -1,7 +1,7 @@
 require("dotenv").config(); //env format uchun
 
 const StudentRouter = require("./routes/Student");
-const AdminRouter = require("./routes/Student");
+const AdminRouter = require("./routes/Admin");
 
 const express = require("express"); //express
 const { default: mongoose } = require("mongoose");
