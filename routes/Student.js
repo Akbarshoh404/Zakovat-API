@@ -15,9 +15,9 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { fullname } = req.body;
+  const { login } = req.body;
 
-  let todo = await Request.findOne({ fullname });
+  let todo = await Request.findOne({ login });
   if (todo) return res.send("You have this user!!!");
 
   todo = new Request(req.body);
