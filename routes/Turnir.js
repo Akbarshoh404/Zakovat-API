@@ -14,6 +14,20 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:_id", async (req, res) => {
+  try {
+    const { _id } = req.params;
+    const todo = await Turnir.findById(_id);
+
+    if (!todo) return res.status(404).send("Turnir not found!");
+
+    res.json(todo);
+  } catch (error) {
+    console.log({ error, message: "Error!!! Could not retrieve Turnir" });
+    res.status(500).send("Error retrieving Turnir");
+  }
+});
+
 router.post("/", async (req, res) => {
   const { name } = req.body;
 

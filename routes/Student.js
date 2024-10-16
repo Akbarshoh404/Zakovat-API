@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const Request= require("../models/Student");
+const Request = require("../models/Student");
 
 //get metodi
 
@@ -24,6 +24,20 @@ router.post("/", async (req, res) => {
   await todo.save();
 
   res.send("User Added: OK");
+});
+
+router.get("/:_id", async (req, res) => {
+  try {
+    const { _id } = req.params;
+    const user = await Request.findById(_id);
+
+    if (!user) return res.status(404).send("User not found!");
+
+    res.json(user);
+  } catch (error) {
+    console.error({ error, message: "Error!!! Could not retrieve user" });
+    res.status(500).send("Error retrieving user");
+  }
 });
 
 // Delete

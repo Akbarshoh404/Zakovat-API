@@ -26,6 +26,20 @@ router.post("/", async (req, res) => {
   res.send("Team Added: OK");
 });
 
+router.get("/:_id", async (req, res) => {
+  try {
+    const { _id } = req.params;
+    const team = await Team.findById(_id);
+
+    if (!team) return res.status(404).send("Team not found!");
+
+    res.json(team);
+  } catch (error) {
+    console.log({ error, message: "Error!!! Could not retrieve Team" });
+    res.status(500).send("Error retrieving Team");
+  }
+});
+
 // Delete
 
 router.delete("/:_id", async (req, res) => {

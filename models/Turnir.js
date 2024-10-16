@@ -18,6 +18,18 @@ const TurnirSchema = new mongoose.Schema(
           id: {
             type: String,
           },
+
+          trueAnswers: {
+            type: Number,
+          },
+
+          falseAnswers: {
+            type: String,
+          },
+
+          penalty: {
+            type: String,
+          },
         },
       ],
     },

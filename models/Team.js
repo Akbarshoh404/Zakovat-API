@@ -1,3 +1,4 @@
+const { type } = require("express/lib/response");
 const mongoose = require("mongoose");
 
 const TeamSchema = new mongoose.Schema(
@@ -7,15 +8,36 @@ const TeamSchema = new mongoose.Schema(
       required: true,
     },
 
+    grade: {
+      type: Number,
+      required: true,
+    },
+
     participants: {
-        type: [
-          {
-            id: {
-              type: String,
-            },
+      type: [
+        {
+          id: {
+            type: String,
           },
-        ],
-      },
+        },
+      ],
+    },
+
+    trueAnswers: {
+      type: Number,
+    },
+
+    falseAnswers: {
+      type: Number
+    },
+
+    penalty: {
+      type: Number
+    },
+
+    score: {
+      type: Number
+    }
   },
   {
     timestamps: true,

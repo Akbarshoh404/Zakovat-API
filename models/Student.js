@@ -1,3 +1,4 @@
+const { type } = require("express/lib/response");
 const mongoose = require("mongoose");
 
 const StudentSchema = new mongoose.Schema(
@@ -20,33 +21,11 @@ const StudentSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-    },
-
-    ratings: {
-      type: [
-        {
-          date: {
-            type: String,
-          },
-
-          trueAnswers: {
-            type: Number,
-          },
-
-          falseAnswers: {
-            type: String,
-          },
-
-          penalty: {
-            type: String,
-          },
-        },
-      ],
-    },
+    }
   },
   {
     timestamps: true,
-  } //Qachon yaratilganini aytadigan gandoncha
+  } //Qachon yaratilganini aytadigan
 );
 
 module.exports = mongoose.model("Request", StudentSchema);
