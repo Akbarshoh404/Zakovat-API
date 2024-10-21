@@ -25,7 +25,7 @@ const StudentSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  } //Qachon yaratilganini aytadigan
+  } //Qachon yaratilganini aytadigan amcha
 );
 
 module.exports = mongoose.model("Request", StudentSchema);

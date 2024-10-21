@@ -19,7 +19,7 @@ const AdminSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  } //Qachon yaratilganini aytadigan gandoncha
+  } //Qachon yaratilganini aytadigan gandoncha aming gandon
 );
 
 module.exports = mongoose.model("Admin", AdminSchema);
